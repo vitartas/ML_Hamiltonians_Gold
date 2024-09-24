@@ -16,6 +16,8 @@ committee_size = 10
 ML_Hamiltonians_Gold_path = "."
 
 # Deserialise the saved models
+@info "Loading the models"
+flush(stdout)
 model_H = deserialize("$(ML_Hamiltonians_Gold_path)/models/Au_fcc_barbar_H_committee.bin")
 model_S = deserialize("$(ML_Hamiltonians_Gold_path)/models/Au_fcc_barbar_S_committee.bin")
 
@@ -54,6 +56,7 @@ h5open("$(ML_Hamiltonians_Gold_path)/Au_hcp_committee.h5", "w") do db
 
         for i = 1:committee_size
             @info "Predicting H and S for a member $i"
+	    flush(stdout)
 
             create_group(db_committee_pred, "$i")
             db_committee_pred_i = db["$(predicting_system)/committee_prediction/$(i)"]

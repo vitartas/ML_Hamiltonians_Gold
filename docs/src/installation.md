@@ -109,7 +109,12 @@ cd hamutils
 pip install .
 ```
 
-!!! note
-    If the package was installed into a virtual environment, do not forget to activate the environment when running the tutorial.
+## ML Hamiltonians for Gold Data
+
+The scripts to run the tutorial and the provided models can be found on a [GitHub repository](https://github.com/vitartas/ML_Hamiltonians_Gold/tree/main). The repository can be cloned as follows:
+
+```
+git clone git@github.com:vitartas/ML_Hamiltonians_Gold.git
+```
 
 [^1]: Zhang, L. et al. Equivariant analytical mapping of first principles Hamiltonians to accurate and transferable materials models. npj Comput Mater **8**, 1-14 (2022).

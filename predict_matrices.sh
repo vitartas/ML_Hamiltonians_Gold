@@ -9,4 +9,4 @@ JULIA_EXEC=julia
 # Feel free to change the number of processes.
 N_PROCS=4
 
-$JULIA_EXEC -p $N_PROCS --project=$ACEH_DIR predict_matrices.jl
+nohup $JULIA_EXEC -p $N_PROCS --project=$ACEH_DIR predict_matrices.jl &
