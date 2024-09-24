@@ -8,3 +8,7 @@ makedocs(
         "Tutorial" => "tutorial.md"
     ]
 )
+
+deploydocs(
+    repo="github.com/vitartas/ML_Hamiltonians_Gold.git"
+)
