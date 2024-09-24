@@ -9,19 +9,25 @@ using Serialization
 # to wait for a very long time.
 committee_size = 10
 
+# It is assumed that the script is run from the `ML_Hamiltonians_Gold` directory,
+# in which case the script should work. If the script is being run from
+# a different directory, change the `ML_Hamiltonians_Gold_path` with an appropriate
+# relative or absolute path.
+ML_Hamiltonians_Gold_path = "."
+
 # Deserialise the saved models
-model_H = deserialize("models/Au_fcc_barbar_H_committee.bin")
-model_S = deserialize("models/Au_fcc_barbar_S_committee.bin")
+model_H = deserialize("$(ML_Hamiltonians_Gold_path)/models/Au_fcc_barbar_H_committee.bin")
+model_S = deserialize("$(ML_Hamiltonians_Gold_path)/models/Au_fcc_barbar_S_committee.bin")
 
 # Path to the database containing the target system
-predicting_path = "systems/Au_hcp.h5"
+predicting_path = "$(ML_Hamiltonians_Gold_path)/systems/Au_hcp.h5"
 predicting_systems = ["run_Aims_fevy_a5b"]
 
 # Load the predicting database
 predicting_database = h5open(predicting_path)
 
 # Predict matrices and write to a new database
-h5open("Au_hcp_committee.h5", "w") do db
+h5open("$(ML_Hamiltonians_Gold_path)/Au_hcp_committee.h5", "w") do db
 
     for predicting_system in predicting_systems
         atoms = load_atoms(predicting_database[predicting_system]; recentre=true)
