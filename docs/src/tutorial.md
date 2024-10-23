@@ -34,7 +34,7 @@ source predict_matrices.sh
 ```
 
 !!! warning
-    Make sure the appropriate version of Julia is loaded from the SCRTP system before running this script. Julia should be loaded from the module system in the same way as in the [Installation](installation.md).
+    Make sure the appropriate version of Julia is loaded from the SCRTP system before running this script, and the `JULIA_DEPOT_PATH` is set appropriately. Julia should be loaded from the module system in the same way as in the [Installation](installation.md).
 
 The script should start running in the background, generating a logger file `nohup.out`, and an HDF5 database file `Au_hcp_committee.h5` which contains the predicted data. The script should take about ~15 minutes to finish (with `N_PROCS=8`).
 

@@ -18,6 +18,12 @@ module purge
 module load Julia/1.10.4-linux-x86_64
 ```
 
+Before installing Julia packages and running Julia, make sure to export the following environment variable on SCRTP systems, or simply add it to your `.bashrc`:
+
+```bash
+export JULIA_DEPOT_PATH=~/julia
+```
+
 ## ACEhamiltonians
 
 ACEhamiltonians is a Julia package which is used to perform training and inference of real-space Hamiltonians and overlap matrices.[^1]
